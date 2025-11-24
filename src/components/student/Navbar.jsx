@@ -8,14 +8,14 @@ import { AppContext } from "../../context/AppContext";
 export default function Navbar() {
   const isCourseListPage = location.pathname.includes("/course-list");
   const { openSignIn } = useClerk();
-  const { navigate } = useContext(AppContext);
+  const { navigate, isEducator } = useContext(AppContext);
 
   const { user } = useUser();
 
   return (
     <div
-      className={`absolute w-full h-18 flex items-center justify-between px-10 xl:px-50 ${
-        isCourseListPage ? "bg-white" : "bg-amber-100/30"
+      className={`w-full h-18 flex items-center justify-between px-10 xl:px-50 ${
+        isCourseListPage ? "bg-white" : "bg-amber-100/80"
       } `}
     >
       <img
@@ -28,7 +28,10 @@ export default function Navbar() {
         <div className="hidden lg:flex gap-5">
           {user ? (
             <div className="flex gap-3 items-center text-gray-500">
-              <button className="cursor-pointer">Become Educator</button>|
+              <button className="cursor-pointer">
+                {isEducator ? "Educator Dashboard" : "Become Educator"}
+              </button>
+              |
               <Link to="/" className="cursor-pointer">
                 My Enrollments
               </Link>
@@ -50,7 +53,10 @@ export default function Navbar() {
         <div className="lg:hidden flex items-center gap-5 text-gray-500">
           {user && (
             <div className="flex gap-5 items-center">
-              <button className="cursor-pointer">Become Educator</button>|
+              <button className="cursor-pointer">
+                {isEducator ? "Educator Dashboard" : "Become Educator"}
+              </button>
+              |
               <Link to="/" className="cursor-pointer">
                 My Enrollments
               </Link>

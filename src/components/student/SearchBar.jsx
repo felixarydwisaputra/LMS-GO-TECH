@@ -20,7 +20,7 @@ export default function SearchBar() {
       </h1>
       <form
         onSubmit={onSearchHandler}
-        className="bg-white w-full flex items-center pl-5 pr-1 py-1 rounded-sm border border-gray-500"
+        className="bg-white w-full flex items-center pl-5 pr-1 py-1 rounded-lg border border-gray-500"
       >
         <img src={assets.search_icon} alt="search_icon" />
         <input
@@ -32,7 +32,7 @@ export default function SearchBar() {
         />
         <button
           type="submit"
-          className="w-40 h-full bg-amber-500 text-white px-7 py-3 rounded-md"
+          className="w-40 h-full bg-amber-500 text-white px-7 py-3 rounded-md cursor-pointer"
         >
           Search
         </button>

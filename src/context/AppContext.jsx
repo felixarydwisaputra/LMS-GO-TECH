@@ -8,6 +8,7 @@ const AppContextProvider = (props) => {
   const currency = import.meta.env.VITE_CURRENCY;
   const navigate = useNavigate();
 
+  const [isEducator, setIsEducator] = useState(false);
   const [allCourses, setAllCourses] = useState([]);
 
   const calculatedRatings = (course) => {
@@ -34,6 +35,7 @@ const AppContextProvider = (props) => {
     allCourses,
     navigate,
     calculatedRatings,
+    isEducator,
   };
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>

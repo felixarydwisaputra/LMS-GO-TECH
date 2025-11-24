@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 export default function CourseCard({ course }) {
   const { currency, calculatedRatings } = useContext(AppContext);
-  console.log(course);
 
   return (
     <Link
