@@ -18,10 +18,10 @@ export default function Footer() {
         <div className="w-1/5 h-full px-20 py-15">
           <h1 className="text-xl font-semibold text-white">Company</h1>
           <div className="mt-8 flex flex-col gap-3 text-white">
-            <p>Home</p>
-            <p>About Us</p>
-            <p>Contact Us</p>
-            <p>Privacy Policy</p>
+            <p className="cursor-pointer">Home</p>
+            <p className="cursor-pointer">About Us</p>
+            <p className="cursor-pointer">Contact Us</p>
+            <p className="cursor-pointer">Privacy Policy</p>
           </div>
         </div>
         <div className="w-2/5 h-full px-20 py-15">
@@ -33,7 +33,7 @@ export default function Footer() {
             <input
               type="text"
               placeholder="Enter your email"
-              className="px-3 py-3 bg-gray-300/40 w-full rounded-sm focus:outline-0 text-white"
+              className="px-3 py-3 bg-white/20 w-full rounded-sm focus:outline-0 text-white"
             />
             <button className="px-5 py-2 bg-amber-500 text-white rounded-sm cursor-pointer">
               Subscribe

@@ -2,13 +2,13 @@ import { assets, dummyTestimonial } from "../../assets/assets";
 
 export default function Testimonial() {
   return (
-    <div className="my-30 px-5 md:px-10 xl:px-30">
+    <div className="my-30 px-5 md:px-10 xl:px-70">
       <h2 className="text-4xl font-semibold text-center">Testimonials</h2>
       <p className="w-[40vw] mx-auto mt-5 text-gray-500 text-center">
         Hear from our learners as they share their journeys of transformation,
         success, and how our platform has made a difference in their lives.
       </p>
-      <div className="grid grid-cols-3 gap-7 px-5 md:px-10 2xl:px-40 my-20">
+      <div className="grid grid-cols-3 gap-7 my-20">
         {dummyTestimonial.map((testimonal, idx) => (
           <div key={idx} className="shadow-lg rounded-md overflow-hidden">
             {console.log(testimonal)}

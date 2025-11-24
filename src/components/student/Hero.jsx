@@ -21,7 +21,7 @@ export default function Hero() {
           <Companies />
         </div>
         <div className="w-1/2 h-full flex flex-col justify-center gap-5 px-20">
-          <SearchBar />
+          <SearchBar isHero={true} />
         </div>
       </div>
     </>
