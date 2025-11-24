@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
+import Hero from "../../components/student/Hero";
+import CoursesSection from "../../components/student/CoursesSection";
 
 export default function Home() {
   return (
-    <div>HomePage</div>
-  )
+    <>
+      <div className="min-h-screen w-full">
+        <Hero />
+        <CoursesSection />
+      </div>
+    </>
+  );
 }
