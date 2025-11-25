@@ -21,6 +21,7 @@ export default function CourseCard({ course }) {
         <h1 className=" text-start text-xl font-semibold">
           {course.courseTitle}
         </h1>
+        <p className="text-gray-500">GreatStack</p>
         <div className="flex gap-2">
           <p>{calculatedRatings(course)}</p>
           <div className="flex">

@@ -17,7 +17,7 @@ export default function SearchBar({ isHero }) {
   return (
     <>
       {isHero && (
-        <h1 className="text-2xl uppercase font-semibold">
+        <h1 className="text-2xl uppercase font-semibold text-center">
           Search for your courses here....
         </h1>
       )}
