@@ -14,7 +14,7 @@ export default function CourseDetails() {
   const [courseData, setCourseData] = useState(null);
   const [openSections, setOpenSections] = useState({});
   const [playerData, setPlayerData] = useState(null);
-  const [isEnroll, setIsEnroll] = useState(true);
+  const [isEnroll, setIsEnroll] = useState(false);
   const {
     allCourses,
     calculatedRatings,
@@ -35,7 +35,7 @@ export default function CourseDetails() {
 
   useEffect(() => {
     fetchDataCourse();
-  }, [fetchDataCourse]);
+  }, [allCourses]);
 
   return courseData ? (
     <>
@@ -233,7 +233,10 @@ export default function CourseDetails() {
                   <p>{calculatedNoOfLecture(courseData)} lessons</p>
                 </div>
               </div>
-              <button className="cursor-pointer my-5 py-3 rounded-md text-white w-full bg-amber-500">
+              <button
+                onClick={() => setIsEnroll(true)}
+                className="cursor-pointer my-5 py-3 rounded-md text-white w-full bg-amber-500"
+              >
                 {isEnroll ? "Already Enrolled" : "Enroll Now"}
               </button>
               <h2 className="text-xl">What's in the course?</h2>

@@ -13,10 +13,10 @@ export default function CallToAction() {
         laborum consectetur accusantium repellat distinctio.
       </p>
       <div className="my-10 flex gap-3 w-full justify-center">
-        <button className="px-10 py-3 bg-blue-500 rounded-md text-white">
+        <button className="cursor-pointer px-10 py-3 bg-blue-500 rounded-md text-white">
           Get Started
         </button>
-        <button className="px-10 py-3 rounded-md text-black">
+        <button className="cursor-pointer px-10 py-3 rounded-md text-black">
           Learn More <span className="text-xl ml-2">&rarr;</span>
         </button>
       </div>

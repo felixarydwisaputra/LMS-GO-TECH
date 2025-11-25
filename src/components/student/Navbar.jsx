@@ -22,7 +22,7 @@ export default function Navbar() {
         onClick={() => navigate("/")}
         src={assets.logo}
         alt="logo"
-        className="w-26"
+        className="w-26 cursor-pointer"
       />
       <div className="flex gap-5 text-sm md:text-base">
         <div className="hidden lg:flex gap-5">
@@ -32,7 +32,7 @@ export default function Navbar() {
                 {isEducator ? "Educator Dashboard" : "Become Educator"}
               </button>
               |
-              <Link to="/" className="cursor-pointer">
+              <Link to="/my-enrollments" className="cursor-pointer">
                 My Enrollments
               </Link>
             </div>
