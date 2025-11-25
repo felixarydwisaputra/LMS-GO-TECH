@@ -28,9 +28,9 @@ export default function Navbar() {
         <div className="hidden lg:flex gap-5">
           {user ? (
             <div className="flex gap-3 items-center text-gray-500">
-              <button className="cursor-pointer">
+              <Link to="/educator" className="cursor-pointer">
                 {isEducator ? "Educator Dashboard" : "Become Educator"}
-              </button>
+              </Link>
               |
               <Link to="/my-enrollments" className="cursor-pointer">
                 My Enrollments
@@ -53,9 +53,9 @@ export default function Navbar() {
         <div className="lg:hidden flex items-center gap-5 text-gray-500">
           {user && (
             <div className="flex gap-5 items-center">
-              <button className="cursor-pointer">
+              <Link className="cursor-pointer">
                 {isEducator ? "Educator Dashboard" : "Become Educator"}
-              </button>
+              </Link>
               |
               <Link to="/" className="cursor-pointer">
                 My Enrollments
@@ -66,7 +66,7 @@ export default function Navbar() {
             <UserButton />
           ) : (
             <button onClick={() => openSignIn()}>
-              <img src={assets.user_icon} alt="" />
+              <img src={assets.user_icon} alt="profile" />
             </button>
           )}
         </div>

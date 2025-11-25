@@ -11,7 +11,6 @@ export default function Testimonial() {
       <div className="grid grid-cols-3 gap-7 my-20">
         {dummyTestimonial.map((testimonal, idx) => (
           <div key={idx} className="shadow-lg rounded-md overflow-hidden">
-            {console.log(testimonal)}
             <div className="flex items-center bg-gray-300/30 p-7 gap-5">
               <img className="w-12" src={testimonal.image} alt="img-profile" />
               <div>

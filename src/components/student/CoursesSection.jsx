@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 export default function CoursesSection() {
   const { allCourses } = useContext(AppContext);
-  console.log(allCourses[0]);
 
   return (
     <div className="py-10 text-center px-5 md:px-10 xl:px-55">
