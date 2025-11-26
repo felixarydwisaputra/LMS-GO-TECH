@@ -39,10 +39,10 @@ export default function CourseDetails() {
 
   return courseData ? (
     <>
-      <div className="flex w-full items-start justify-between px-50 py-20 relative gap-10 ">
+      <div className="flex flex-col xl:flex-row w-full items-start justify-between px-10 xl:px-30 2xl:px-50 py-10 2xl:py-20 relative gap-10 ">
         <div className="w-full h-[92vh] absolute top-0 bottom-0 right-0 left-0 z-1 bg-linear-to-b from-amber-100/80"></div>
         {/* sisi kiri */}
-        <div className="z-2 max-w-2xl text-gray-500">
+        <div className="z-2 2xl:max-w-2xl text-gray-500">
           <h2 className="text-4xl font-bold text-gray-800">
             {courseData.courseTitle}
           </h2>
@@ -108,11 +108,15 @@ export default function CourseDetails() {
                           openSections[idx] ? "rotate-180" : ""
                         }`}
                       />
-                      <p>{chapter.chapterTitle}</p>
+                      <p className="text-sm md:text-base">
+                        {chapter.chapterTitle}
+                      </p>
                     </div>
-                    <p>
-                      {chapter.chapterContent.length} lectures -{" "}
-                      {calculatedChapterTime(chapter)}
+                    <p className="text-sm md:text-base flex">
+                      {chapter.chapterContent.length} lectures
+                      <span className="hidden md:flex">
+                        - {calculatedChapterTime(chapter)}
+                      </span>
                     </p>
                   </div>
                   <div
@@ -129,11 +133,11 @@ export default function CourseDetails() {
                               alt="play"
                               className="w-5"
                             />
-                            <p className="font-semibold">
+                            <p className="font-semibold text-sm md:text-base">
                               {lecture.lectureTitle}
                             </p>
                           </div>
-                          <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-3 text-sm md:text-base">
                             {lecture.isPreviewFree && (
                               <p
                                 className="cursor-pointer hover:underline text-blue-500"
@@ -148,7 +152,7 @@ export default function CourseDetails() {
                                 Preview
                               </p>
                             )}
-                            <p>
+                            <p className="text-sm text-end md:text-start">
                               {humanizeDuration(
                                 lecture.lectureDuration * 60 * 1000,
                                 { units: ["h", "m"] }
@@ -202,7 +206,7 @@ export default function CourseDetails() {
                 </p>
               </div>
               <div className="py-5 flex gap-3 items-center">
-                <h1 className="font-semibold text-4xl">
+                <h1 className="font-semibold text-4xl md:text-4xl">
                   {currency}
                   {(
                     courseData.coursePrice -
@@ -215,7 +219,7 @@ export default function CourseDetails() {
                 </h2>
                 <p className="font-light">{courseData.discount}% off</p>
               </div>
-              <div className="flex items-center gap-4 text-gray-400">
+              <div className="flex items-center gap-4 text-gray-400 text-xs md:text-base">
                 <div className="flex gap-2">
                   <img src={assets.star} alt="" />
                   <p className="text-black font-semibold">

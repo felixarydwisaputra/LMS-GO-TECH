@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 
 export default function Footer() {
   return (
-    <div className="w-full bg-[#212122] flex flex-col px-5 lg:px-10 xl:px-30">
+    <div className="w-full bg-[#212122] flex flex-col px-10 lg:px-10 xl:px-30">
       <div className="flex flex-col lg:flex-row w-full h-[80%] mt-20 xl:mt-5 ">
         <div className="lg:w-2/5 h-full md:px-5 lg:py-15">
           <img src={assets.logo2} alt="" />
