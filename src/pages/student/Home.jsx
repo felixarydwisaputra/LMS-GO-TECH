@@ -5,6 +5,7 @@ import Testimonial from "../../components/student/Testimonial";
 import CallToAction from "../../components/student/CallToAction";
 import Helpers from "../../components/student/Helpers";
 import Footer from "../../components/student/Footer";
+import Companies from "../../components/student/Companies";
 
 export default function Home() {
   return (

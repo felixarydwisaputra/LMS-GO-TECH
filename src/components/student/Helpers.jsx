@@ -4,9 +4,9 @@ export default function Helpers() {
   return (
     <>
       <div className="w-full h-[50vh] overflow-hidden relative">
-        <div className="absolute z-3 w-full h-full px-5 md:px-10 xl:px-30 flex items-center">
-          <div className="px-5 md:px-10 2xl:px-40">
-            <h1 className="text-8xl w-[70vw] uppercase text-white font-bold">
+        <div className="absolute z-3 w-full h-full md:px-10 xl:px-30 flex items-center justify-center md:justify-start">
+          <div className="lg:px-10 2xl:px-40 flex justify-center items-center">
+            <h1 className="text-3xl md:text-6xl lg:text-8xl text-center md:text-start md:w-[70vw] uppercase text-white font-bold">
               "Small steps for{" "}
               <span className="text-amber-500">
                 <br />

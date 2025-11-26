@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`w-full h-18 flex items-center justify-between px-10 xl:px-50 ${
+      className={`w-full h-18 flex items-center justify-between px-10 xl:px-30 2xl:px-50 ${
         isCourseListPage ? "bg-white" : "bg-amber-100/80"
       } `}
     >

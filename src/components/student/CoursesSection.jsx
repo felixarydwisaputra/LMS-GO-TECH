@@ -7,14 +7,16 @@ export default function CoursesSection() {
   const { allCourses } = useContext(AppContext);
 
   return (
-    <div className="py-10 text-center px-5 md:px-10 xl:px-55">
-      <h1 className="text-4xl font-semibold">Learn from the best</h1>
-      <p className="w-1/2 mx-auto mt-5 text-gray-500">
+    <div className="md:py-10 text-center px-5 md:px-10 xl:px-30 2xl:px-55">
+      <h1 className="text-3xl md:text-4xl font-semibold">
+        Learn from the best
+      </h1>
+      <p className="lg:w-1/2 mx-auto mt-5 text-gray-500 text-base md:text-base">
         Discover our top-rated courses across various categories. From coding
         and design to business and wellness, our courses are crafted to deliver
         results.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 my-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 my-10 md:my-20">
         {allCourses.slice(0, 4).map((course, idx) => (
           <CourseCard key={idx} course={course} />
         ))}
