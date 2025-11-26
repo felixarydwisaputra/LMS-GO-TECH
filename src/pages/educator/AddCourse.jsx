@@ -1,4 +1,4 @@
-import React, { act, useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Quill from "quill";
 import { AppContext } from "../../context/AppContext";

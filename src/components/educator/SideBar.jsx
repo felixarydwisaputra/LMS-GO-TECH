@@ -38,7 +38,7 @@ export default function SideBar() {
           <img
             src={item.icon}
             alt="icon-sidebar"
-            className="md:ml-5 lg:ml-0 w-7 text-center"
+            className="md:ml-5 lg:ml-0 w-5 text-center"
           />
           <p className="">{item.name}</p>
         </NavLink>

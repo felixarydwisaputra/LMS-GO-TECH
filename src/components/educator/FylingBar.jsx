@@ -22,7 +22,7 @@ export default function FylingBar() {
     },
   ];
   return (
-    <div className="fixed z-10 w-full py-3 flex justify-center bottom-5">
+    <div className="md:hidden fixed z-10 w-full py-3 flex justify-center bottom-5">
       <div className="flex gap-10 items-center bg-black text-white px-7 py-3 rounded-full shadow-xl">
         {menuItems.map((item) => (
           <NavLink

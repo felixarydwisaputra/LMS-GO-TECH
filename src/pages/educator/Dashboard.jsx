@@ -20,7 +20,7 @@ export default function Dashboard() {
   console.log("laj");
   return dashboardData ? (
     <div className="p-3 md:p-5 lg:p-10">
-      <div className="flex flex-col max-sm:w-full w-fit md:flex-row gap-5 flex-wrap md:justify-center lg:justify-start items-center max-sm:text-xs">
+      <div className="flex flex-col max-sm:w-full w-fit md:flex-row gap-5 flex-wrap md:justify-center lg:justify-start items-center max-sm:text-xs mt-7">
         <div className="flex justify-center gap-5 border-2 border-gray-300 p-7 rounded-lg">
           <img
             className="rounded-full"

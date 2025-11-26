@@ -43,7 +43,7 @@ export default function MyCourses() {
                   />
                   <span>{item.courseTitle}</span>
                 </td>
-                <td className="px-6 py-4">
+                <td className="px-6 py-4 max-sm:text-right">
                   {currency}
                   {Math.floor(
                     item.enrolledStudents.length *
