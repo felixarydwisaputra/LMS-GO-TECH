@@ -3,8 +3,8 @@ import { assets } from "../../assets/assets";
 
 export default function Footer() {
   return (
-    <footer className="flex w-full h-18 items-center justify-between absolute bottom-0 left-0">
-      <div className="flex gap-5 ml-15">
+    <footer className="flex w-full h-18 items-center max-sm:justify-between justify-end gap-5 max-sm:mb-40 max-sm:mt-10">
+      <div className="flex max-sm:gap-2 gap-5 ml-15">
         <img
           src={assets.instagram_icon}
           alt="icon"

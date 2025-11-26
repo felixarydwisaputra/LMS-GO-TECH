@@ -64,11 +64,19 @@ export default function Navbar() {
                   isOpen ? "block" : "hidden"
                 } absolute bg-white right-5 top-8 z-5 rounded-lg shadow-lg`}
               >
-                <div className="flex flex-col gap-3 items-center text-xs md:text-base p-5">
-                  <Link to="/educator" className="cursor-pointer ">
+                <div className="flex flex-col gap-3 text-nowrap text-xs md:text-base p-5">
+                  <Link
+                    to="/educator"
+                    className="cursor-pointer text-left"
+                    onClick={() => setIsOpen(false)}
+                  >
                     {isEducator ? "Educator Dashboard" : "Become Educator"}
                   </Link>
-                  <Link to="/my-enrollments" className="cursor-pointer">
+                  <Link
+                    to="/my-enrollments"
+                    className="cursor-pointer text-left"
+                    onClick={() => setIsOpen(false)}
+                  >
                     My Enrollments
                   </Link>
                 </div>

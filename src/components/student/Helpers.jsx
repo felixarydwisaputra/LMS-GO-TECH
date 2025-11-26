@@ -3,7 +3,7 @@ import React from "react";
 export default function Helpers() {
   return (
     <>
-      <div className="w-full h-[50vh] overflow-hidden relative">
+      <div className="w-full h-[50vh] 2xl:min-h-[80vh] overflow-hidden relative">
         <div className="absolute z-3 w-full h-full md:px-10 xl:px-30 flex items-center justify-center md:justify-start">
           <div className="lg:px-10 2xl:px-40 flex justify-center items-center">
             <h1 className="text-3xl md:text-6xl lg:text-8xl text-center md:text-start md:w-[70vw] uppercase text-white font-bold">

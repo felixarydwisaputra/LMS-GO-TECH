@@ -7,7 +7,7 @@ export default function MyEnrollment() {
   const { userEnrollCourses, calculatedCourseDuration, navigate } =
     useContext(AppContext);
 
-  const [progressArray, setProgressArray] = useState([
+  const [progressArray] = useState([
     { lectureCompleted: 2, totalLectures: 4 },
     { lectureCompleted: 1, totalLectures: 5 },
     { lectureCompleted: 3, totalLectures: 6 },
@@ -26,15 +26,21 @@ export default function MyEnrollment() {
 
   return (
     <>
-      <div className="md:px-50 px-8 pt-10 pb-10">
+      <div className="px-10 xl:px-50 pt-10 pb-10">
         <h2 className="text-3xl font-semibold">MyEnrollment</h2>
         <table className="table-fixed md:table-auto w-full overflow-hidden border border-gray-400/30 mt-5 mb-10">
           <thead className="border-b border-gray-400/30 text-gray-600 text-left">
             <tr>
               <th className="px-4 py-3 truncate font-semibold">Course</th>
-              <th className="px-4 py-3 truncate font-semibold">Duration</th>
-              <th className="px-4 py-3 truncate font-semibold">Complete</th>
-              <th className="px-4 py-3 truncate font-semibold">Status</th>
+              <th className="px-4 py-3 truncate font-semibold hidden md:block">
+                Duration
+              </th>
+              <th className="px-4 py-3 truncate font-semibold max-sm:hidden">
+                Complete
+              </th>
+              <th className="px-4 py-3 truncate font-semibold max-sm:text-end">
+                Status
+              </th>
             </tr>
           </thead>
           <tbody className="text-gray-700">
@@ -44,7 +50,7 @@ export default function MyEnrollment() {
                   <img
                     src={course.courseThumbnail}
                     alt="thumbnail"
-                    className="w-34"
+                    className="w-34 hidden md:block"
                   />
                   <div className="flex-1">
                     <p>{course.courseTitle}</p>
@@ -72,7 +78,7 @@ export default function MyEnrollment() {
                 <td className="px-4 py-3 max-sm:text-right">
                   <button
                     onClick={() => navigate("/player/" + course._id)}
-                    className={`px-3 cursor-pointer py-1.5 text-white rounded ${
+                    className={`text-xs md:text-base px-3 cursor-pointer py-1.5 text-white rounded ${
                       progressArray[idx] &&
                       progressArray[idx].lectureCompleted /
                         progressArray[idx].totalLectures ===

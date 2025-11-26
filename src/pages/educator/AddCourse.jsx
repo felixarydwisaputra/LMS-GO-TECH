@@ -110,7 +110,10 @@ export default function AddCourse() {
 
   return (
     <div className="p-10 ">
-      <form onSubmit={handleSubmit} className="flex gap-10">
+      <form
+        onSubmit={handleSubmit}
+        className="flex xl:flex-row flex-col gap-10"
+      >
         <div className="flex-1">
           <div className="flex flex-col gap-3 mb-5">
             <label htmlFor="course_title" className="font-semibold">
@@ -133,7 +136,7 @@ export default function AddCourse() {
             </label>
             <div ref={editorRef} required></div>
           </div>
-          <div className="flex gap-5 mb-5">
+          <div className="flex max-sm:gap-2 gap-5 mb-5">
             <div className="w-1/2 flex flex-col gap-3">
               <label htmlFor="course_price">Course Price ({currency})</label>
               <input

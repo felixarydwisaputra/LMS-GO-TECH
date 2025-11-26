@@ -26,8 +26,10 @@ export default function MyCourses() {
             <tr>
               <th className="px-5 py-3 text-start">All Course</th>
               <th className="px-5 py-3 text-start">Earnings</th>
-              <th className="px-5 py-3 text-start">Students</th>
-              <th className="px-5 py-3 text-start">Published On</th>
+              <th className="px-5 py-3 text-start hidden lg:block">Students</th>
+              <th className="px-5 py-3 text-start hidden lg:block">
+                Published On
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -37,7 +39,7 @@ export default function MyCourses() {
                   <img
                     src={item.courseThumbnail}
                     alt="image"
-                    className="w-28"
+                    className="max-sm:hidden w-28"
                   />
                   <span>{item.courseTitle}</span>
                 </td>
@@ -49,8 +51,10 @@ export default function MyCourses() {
                         (item.discount * item.coursePrice) / 100)
                   )}
                 </td>
-                <td className="px-6 py-4">{item.enrolledStudents.length}</td>
-                <td className="px-6 py-4">
+                <td className="px-6 py-4 hidden lg:block">
+                  {item.enrolledStudents.length}
+                </td>
+                <td className="px-6 py-4 max-sm:hidden">
                   {new Date(item.createdAt).toLocaleDateString()}
                 </td>
               </tr>

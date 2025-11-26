@@ -23,20 +23,24 @@ export default function SideBar() {
   ];
 
   return (
-    <div className="w-72 min-h-[94vh] border-r-2 border-gray-300 flex flex-col">
+    <div className="w-full min-h-screen md:min-h-[95vh] border-r-2 border-gray-300 flex flex-col relative">
       {menuItems.map((item) => (
         <NavLink
           to={item.path}
           key={item.name}
           end={item.path === "/educator"}
           className={({ isActive }) =>
-            `flex gap-3 px-10 py-5 justify-center md:justify-start ${
+            `flex gap-3 px-3 lg:px-10 py-5 items-center md:justify-start ${
               isActive ? "bg-gray-300/30 border-r-[6px] border-amber-400" : ""
             }`
           }
         >
-          <img src={item.icon} alt="icon-sidebar" />
-          <p>{item.name}</p>
+          <img
+            src={item.icon}
+            alt="icon-sidebar"
+            className="md:ml-5 lg:ml-0 w-7 text-center"
+          />
+          <p className="">{item.name}</p>
         </NavLink>
       ))}
     </div>

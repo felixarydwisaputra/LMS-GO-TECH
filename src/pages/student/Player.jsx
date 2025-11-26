@@ -9,7 +9,8 @@ import { Rating } from "react-simple-star-rating";
 import RatingStar from "../../components/student/Rating";
 
 export default function Player() {
-  const { userEnrollCourses, calculatedChapterTime } = useContext(AppContext);
+  const { userEnrollCourses, calculatedChapterTime, navigate } =
+    useContext(AppContext);
   const { courseId } = useParams();
   const [courseData, setCourseData] = useState(null);
   const [playerData, setPlayerData] = useState(null);
@@ -34,9 +35,9 @@ export default function Player() {
 
   return (
     <>
-      <div className="flex w-full min-h-[70vh] items-start justify-between px-50 py-20 relative gap-10">
+      <div className="flex max-lg:flex-col-reverse w-full min-h-[70vh] items-start justify-between px-10 xl:px-30 2xl:px-50 max-sm:py-5 max-sm:pb-10 py-20 relative gap-10">
         {/* kiri side */}
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <h2 className="text-2xl font-semibold">Course Structure</h2>
           <div className="pt-3">
             {courseData &&
@@ -57,11 +58,13 @@ export default function Player() {
                           openSections[idx] ? "rotate-180" : ""
                         }`}
                       />
-                      <p>{chapter.chapterTitle}</p>
+                      <p className="text-sm">{chapter.chapterTitle}</p>
                     </div>
-                    <p>
-                      {chapter.chapterContent.length} lectures -{" "}
-                      {calculatedChapterTime(chapter)}
+                    <p className="max-sm:text-xs flex">
+                      {chapter.chapterContent.length} lectures
+                      <span className="hidden lg:flex">
+                        - {calculatedChapterTime(chapter)}
+                      </span>
                     </p>
                   </div>
                   <div
@@ -69,7 +72,7 @@ export default function Player() {
                       openSections[idx] ? "max-h-96" : "max-h-0"
                     }`}
                   >
-                    <ul className="pl-3 py-3">
+                    <ul className="md:pl-3 py-3">
                       {chapter.chapterContent.map((lecture, indx) => (
                         <li key={indx} className="flex py-2 justify-between">
                           <div className="flex items-center gap-2">
@@ -78,7 +81,7 @@ export default function Player() {
                               alt="play"
                               className="w-5"
                             />
-                            <p className="font-semibold">
+                            <p className="font-semibold max-sm:text-sm">
                               {lecture.lectureTitle}
                             </p>
                           </div>
@@ -97,7 +100,7 @@ export default function Player() {
                                 Watch
                               </p>
                             )}
-                            <p>
+                            <p className="text-xs md:text-base text-wrap">
                               {humanizeDuration(
                                 lecture.lectureDuration * 60 * 1000,
                                 { units: ["h", "m"] }
@@ -111,7 +114,6 @@ export default function Player() {
                 </div>
               ))}
           </div>
-
           <div className="mt-10 flex gap-3 items-center">
             <h3 className="font-semibold text-xl">Rate this course :</h3>
             <RatingStar intialRating={0} />
@@ -119,7 +121,7 @@ export default function Player() {
         </div>
 
         {/* kanan side */}
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           {playerData ? (
             <div>
               <YouTube
@@ -146,6 +148,13 @@ export default function Player() {
               className="w-full"
             />
           )}
+        </div>
+        <div
+          className="flex items-center gap-2 z-10 -mb-5 text-gray-400"
+          onClick={() => navigate(-1)}
+        >
+          <img src={assets.arrow_icon} className="rotate-180 opacity-50" />
+          <p>Back</p>
         </div>
       </div>
       <Footer />
