@@ -14,7 +14,7 @@ export default function Hero() {
             <img src={assets.sketch} alt="" className="hidden md:absolute" />
           </h1>
           <div className="hidden md:flex lg:hidden w-full lg:w-1/2 h-full flex-col justify-center gap-5 md:px-20 my-12 lg:-mt-40">
-            <SearchBar />
+            <SearchBar isHero={false} />
           </div>
           <p className="text-center lg:text-start text-xs md:text-xl text-gray-500 mt-5 lg:mt-6">
             We bring together world-class instructors, interactive content, and
@@ -24,7 +24,7 @@ export default function Hero() {
           <Companies />
         </div>
         <div className="md:hidden xl:flex w-full xl:h-screen flex-col justify-center gap-5 mt-10 xl:-mt-40 xl:px-5">
-          <SearchBar />
+          <SearchBar isHero={true} />
         </div>
       </div>
     </>

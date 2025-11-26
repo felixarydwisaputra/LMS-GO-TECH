@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -9,12 +9,13 @@ export default function Navbar() {
   const isCourseListPage = location.pathname.includes("/course-list");
   const { openSignIn } = useClerk();
   const { navigate, isEducator } = useContext(AppContext);
+  const [isOpen, setIsOpen] = useState(false);
 
   const { user } = useUser();
 
   return (
     <div
-      className={`w-full h-18 flex items-center justify-between px-10 xl:px-30 2xl:px-50 ${
+      className={`relative w-full h-18 flex items-center justify-between px-10 xl:px-30 2xl:px-50 ${
         isCourseListPage ? "bg-white" : "bg-amber-100/80"
       } `}
     >
@@ -50,17 +51,29 @@ export default function Navbar() {
             </button>
           )}
         </div>
-        <div className="lg:hidden flex items-center gap-5 text-gray-500">
+        <div className="lg:hidden flex items-center gap-5 text-gray-500 relative">
           {user && (
-            <div className="flex gap-5 items-center">
-              <Link className="cursor-pointer">
-                {isEducator ? "Educator Dashboard" : "Become Educator"}
-              </Link>
-              |
-              <Link to="/" className="cursor-pointer">
-                My Enrollments
-              </Link>
-            </div>
+            <span>
+              <img
+                src={assets.down_arrow_icon}
+                className="cursor-pointer"
+                onClick={() => setIsOpen(!isOpen)}
+              />
+              <div
+                className={`${
+                  isOpen ? "block" : "hidden"
+                } absolute bg-white right-5 top-8 z-5 rounded-lg shadow-lg`}
+              >
+                <div className="flex flex-col gap-3 items-center text-xs md:text-base p-5">
+                  <Link to="/educator" className="cursor-pointer ">
+                    {isEducator ? "Educator Dashboard" : "Become Educator"}
+                  </Link>
+                  <Link to="/my-enrollments" className="cursor-pointer">
+                    My Enrollments
+                  </Link>
+                </div>
+              </div>
+            </span>
           )}
           {user ? (
             <UserButton />

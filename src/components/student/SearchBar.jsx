@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { assets } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 
-export default function SearchBar() {
+export default function SearchBar({ isHero }) {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
 
@@ -16,9 +16,15 @@ export default function SearchBar() {
 
   return (
     <>
-      <h1 className="hidden md:block text-base md:text-2xl mt-7 mb-2 md:mt-0 uppercase font-semibold text-center xl:text-start">
-        Search for your courses here
-      </h1>
+      {isHero ? (
+        <h1 className="text-base md:text-2xl mt-7 mb-2 md:mt-0 uppercase font-semibold text-center xl:text-start">
+          Search for your courses here
+        </h1>
+      ) : (
+        <h1 className="hidden text-base md:text-2xl mt-7 mb-2 md:mt-0 uppercase font-semibold text-center xl:text-start">
+          Search for your courses here
+        </h1>
+      )}
       <form
         onSubmit={onSearchHandler}
         className="bg-white w-full flex items-center pl-5 pr-1 py-1 rounded-lg border border-gray-500"

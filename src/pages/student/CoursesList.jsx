@@ -28,10 +28,10 @@ export default function CoursesList() {
 
   return (
     <>
-      <div className="px-50">
-        <div className="flex mb-10 mt-20 justify-between">
-          <div className="w-1/2">
-            <h1 className="text-6xl">Course List</h1>
+      <div className="px-10 xl:px-30 2xl:px-50">
+        <div className="flex flex-col 2xl:flex-row mb-10 mt-10 2xl:mt-20 justify-between">
+          <div className="2xl:w-1/2">
+            <h1 className="text-4xl 2xl:text-6xl">Course List</h1>
             <p className="mt-2">
               <span className="text-amber-500" onClick={() => navigate("/")}>
                 Home
@@ -39,8 +39,8 @@ export default function CoursesList() {
               /<span className="text-gray-500"> Course List</span>
             </p>
           </div>
-          <div className="w-1/2 pl-50">
-            <SearchBar />
+          <div className="2xl:w-1/2 2xl:pl-50 mt-5 2xl:my-0">
+            <SearchBar isHero={false} />
           </div>
         </div>
 
