@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-hooks/set-state-in-effect */
 import React, { useContext, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { AppContext } from "../../context/AppContext";

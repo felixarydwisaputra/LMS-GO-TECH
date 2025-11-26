@@ -5,7 +5,6 @@ import { assets } from "../../assets/assets";
 import humanizeDuration from "humanize-duration";
 import YouTube from "react-youtube";
 import Footer from "../../components/student/Footer";
-import { Rating } from "react-simple-star-rating";
 import RatingStar from "../../components/student/Rating";
 
 export default function Player() {
