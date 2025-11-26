@@ -33,7 +33,10 @@ export default function CoursesList() {
           <div className="2xl:w-1/2">
             <h1 className="text-4xl 2xl:text-6xl">Course List</h1>
             <p className="mt-2">
-              <span className="text-amber-500" onClick={() => navigate("/")}>
+              <span
+                className="text-amber-500 cursor-pointer"
+                onClick={() => navigate("/")}
+              >
                 Home
               </span>{" "}
               /<span className="text-gray-500"> Course List</span>

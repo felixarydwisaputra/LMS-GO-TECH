@@ -37,6 +37,13 @@ export default function Player() {
       <div className="flex max-lg:flex-col-reverse w-full min-h-[70vh] items-start justify-between px-10 xl:px-30 2xl:px-50 max-sm:py-5 max-sm:pb-10 py-20 relative gap-10">
         {/* kiri side */}
         <div className="w-full lg:w-1/2">
+          <div
+            className="max-sm:hidden flex items-center gap-2 z-10 mb-5 -mt-10 text-gray-400 cursor-pointer"
+            onClick={() => navigate(-1)}
+          >
+            <img src={assets.arrow_icon} className="rotate-180 opacity-50" />
+            <p>Back</p>
+          </div>
           <h2 className="text-2xl font-semibold">Course Structure</h2>
           <div className="pt-3">
             {courseData &&
@@ -149,7 +156,7 @@ export default function Player() {
           )}
         </div>
         <div
-          className="flex items-center gap-2 z-10 -mb-5 text-gray-400"
+          className="md:hidden flex items-center gap-2 z-10 -mb-5 text-gray-400"
           onClick={() => navigate(-1)}
         >
           <img src={assets.arrow_icon} className="rotate-180 opacity-50" />

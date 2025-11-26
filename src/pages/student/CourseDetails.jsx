@@ -40,16 +40,16 @@ export default function CourseDetails() {
   return courseData ? (
     <>
       <div className="flex flex-col xl:flex-row w-full items-start justify-between px-10 xl:px-30 2xl:px-50 pt-3 pb-10 2xl:py-20 relative gap-10 ">
-        <div
-          className="flex items-center gap-2 z-10 -mb-5 text-gray-400"
-          onClick={() => navigate(-1)}
-        >
-          <img src={assets.arrow_icon} className="rotate-180 opacity-50" />
-          <p>Back</p>
-        </div>
         <div className="w-full h-[92vh] absolute top-0 bottom-0 right-0 left-0 z-1 bg-linear-to-b from-amber-100/80"></div>
         {/* sisi kiri */}
         <div className="z-2 2xl:max-w-2xl text-gray-500">
+          <div
+            className="flex items-center gap-2 z-10 md:-mt-10 mb-5 text-gray-400 cursor-pointer"
+            onClick={() => navigate(-1)}
+          >
+            <img src={assets.arrow_icon} className="rotate-180 opacity-50" />
+            <p>Back</p>
+          </div>
           <h2 className="text-4xl font-bold text-gray-800">
             {courseData.courseTitle}
           </h2>
